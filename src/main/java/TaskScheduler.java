@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 public class TaskScheduler {
     public static class Task implements Runnable{
+        /*
+            ------------------------- You don't need to modify this part of the code -------------------------
+         */
         String taskName;
         int processingTime;
 
@@ -9,6 +12,9 @@ public class TaskScheduler {
             this.taskName = taskName;
             this.processingTime = processingTime;
         }
+        /*
+            ------------------------- You don't need to modify this part of the code -------------------------
+         */
 
         @Override
         public void run() {
@@ -20,7 +26,14 @@ public class TaskScheduler {
     }
 
     public static ArrayList<String> doTasks(ArrayList<Task> tasks) {
+        /*
+            ------------------------- You don't need to modify this part of the code -------------------------
+         */
         ArrayList<String> finishedTasks = new ArrayList<>();
+        /*
+            ------------------------- You don't need to modify this part of the code -------------------------
+         */
+
         /*
             Create a thread for each given task, And then start them based on which task has the highest priority (highest priority belongs to the tasks that take more time to be completed).
             You have to wait for each task to get done and then go for the next tasks.
