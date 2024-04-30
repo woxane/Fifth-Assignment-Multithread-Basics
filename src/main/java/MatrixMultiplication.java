@@ -15,8 +15,9 @@ public class MatrixMultiplication {
         int end_row;
         int start_col;
         int end_col;
+        int q;
 
-        public BlockMultiplier(List<List<Double>> matrix_A, List<List<Double>> matrix_B, int start_row, int end_row, int start_col, int end_col) {
+        public BlockMultiplier(List<List<Double>> matrix_A, List<List<Double>> matrix_B, int start_row, int end_row, int start_col, int end_col, int q) {
             this.matrix_A = matrix_A;
             this.matrix_B = matrix_B;
             this.start_row = start_row;
@@ -30,6 +31,7 @@ public class MatrixMultiplication {
                 List<Double> row = Collections.nCopies(cols, 0.0);
                 temp_matrix.add(row);
             }
+            q = matrix_A.get(0).size();
         }
 
         @Override
