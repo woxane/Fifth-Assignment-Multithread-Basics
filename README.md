@@ -13,7 +13,7 @@
 
 ## Introduction 👋
 
-Welcome to your Sixth Advanced Programming (AP) journey, where you'll delve into the fascinating world of multithreading in Java. This project is divided into two main sections:
+Welcome to your Fifth Advanced Programming (AP) journey, where you'll delve into the fascinating world of multithreading in Java. This project is divided into two main sections:
 
 1. **Theoretical Questions**: This section is designed to deepen your understanding of key multithreading concepts in Java. You'll explore topics such as the `Runnable` interface, the `Thread` class, the `interrupt()` method, and the `run()` method, and engage with thought-provoking questions that challenge your theoretical knowledge.
 
