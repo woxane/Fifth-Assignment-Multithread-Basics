@@ -33,30 +33,29 @@ Please note that while this assignment covers many important aspects of multithr
 
 ### Theoretical Questions 📝 
 
-~add note about MD file.
+**Note: For this assignment, you don’t need to create a report file. Instead, you should create a Markdown file and answer your theoretical questions there.**
 
-1. **What is the behavior of a sleeping thread in Java when its interruption flag is checked from within the thread itself?** ~~
-    - *Hint*: Consider the role of the `InterruptedException` and the `Thread.interrupted()` method.
+1. What will be printed after interrupting the thread?
 ```java
-public class SleepThread extends Thread {
-    public void run() {
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            System.out.println("Thread was interrupted!");
+public static class SleepThread extends Thread {
+        public void run() {
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted!");
+            } finally {
+                System.out.println("Thread will be finished here!!!");
+            }
         }
     }
-}
 
-public class Main {
     public static void main(String[] args) {
         SleepThread thread = new SleepThread();
         thread.start();
         thread.interrupt();
     }
-}
 ```
-2. **In Java, what would be the outcome if the `run()` method of a `Runnable` object is invoked directly, without initiating it inside a `Thread` object?**
+2. In Java, what would be the outcome if the `run()` method of a `Runnable` object is invoked directly, without initiating it inside a `Thread` object?
 ```java
 public class DirectRunnable implements Runnable {
     public void run() {
@@ -71,7 +70,7 @@ public class Main {
     }
 }
 ```
-3. **Elaborate on the sequence of events that occur when the `join()` method of a thread (let's call it `Thread_0`) is invoked within the `Main()` method of a Java program?**
+3. Elaborate on the sequence of events that occur when the `join()` method of a thread (let's call it `Thread_0`) is invoked within the `Main()` method of a Java program?
 ```java
 public class JoinThread extends Thread {
     public void run() {
@@ -95,7 +94,39 @@ public class Main {
 
 ### Practical Questions 💻
 
-Under process
+**Task Scheduler**:
+
+- In this problem, you are given an **ArrayList** of tasks, each with two fields: **taskName** and **processingTime**. The goal is to sort these tasks based on their priority, where tasks with longer processing times have higher priority. After sorting, we’ll create separate threads for each task and execute them. Importantly, we’ll wait for each thread to finish its work to ensure the desired execution order. Finally, we’ll return the order of task execution.
+
+**Parallelizing Matrix Multiplication**:
+
+- In this problem, you are asked to write a program that can parallelize matrix multiplication using multithreading.
+
+- In the **ParallelizeMatMul** method, you will be given two matrices, **A** and **B**. Matrix **A** has dimensions **p** × **q**, and matrix **B** has dimensions **q** × **r** (where both **p** and **r** are even numbers). Your task is to compute the dot product of matrices **A** and **B** to obtain a resulting matrix, **C**. To achieve faster execution, we’ll utilize multithreading.
+
+- **Hint**:
+
+    - Divide the final matrix **C** into four equal quarters, as shown in the figure below. Assign each quarter to a separate thread for calculations.
+
+  ![](D:/Users/Desktop/OIG3.jpeg)
+
+    - Procedure:
+        1. Divide the quarters among four threads in the **ParallelizeMatMul** method.
+        2. Specify how each thread should calculate the elements in its assigned quarter within its **run()** method.
+        3. Store the calculated elements from each thread in temporary matrices.
+        4. Combine the temporary matrices to construct the final matrix **C**.
+
+- **Warning:** You don't have to modify the code blocks that are marked like the following:
+
+- ```
+  /*
+      ------------------------- You don't need to modify this part of the code -------------------------
+   */
+   	Some codes ...
+   /*
+      ------------------------- You don't need to modify this part of the code -------------------------
+   */
+  ```
 
 ## Evaluation ⚖️
 
