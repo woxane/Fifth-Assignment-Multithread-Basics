@@ -10,17 +10,15 @@ public class MatrixMultiplication {
          */
         List<List<Double>> matrix_A;
         List<List<Double>> matrix_B;
-        List<List<Double>> matrix_C;
         List<List<Double>> temp_matrix;
         int start_row;
         int end_row;
         int start_col;
         int end_col;
 
-        public BlockMultiplier(List<List<Double>> matrix_A, List<List<Double>> matrix_B, List<List<Double>> matrix_C, int start_row, int end_row, int start_col, int end_col) {
+        public BlockMultiplier(List<List<Double>> matrix_A, List<List<Double>> matrix_B, int start_row, int end_row, int start_col, int end_col) {
             this.matrix_A = matrix_A;
             this.matrix_B = matrix_B;
-            this.matrix_C = matrix_C;
             this.start_row = start_row;
             this.end_row = end_row;
             this.start_col = start_col;
