@@ -24,14 +24,14 @@ public class MatrixMultiplication {
             this.end_row = end_row;
             this.start_col = start_col;
             this.end_col = end_col;
-            temp_matrix = new ArrayList<>();
+            this.temp_matrix = new ArrayList<>();
             int rows = end_row - start_row + 1;
             int cols = end_col - start_col + 1;
             for (int i = 0; i < rows; i++) {
                 List<Double> row = Collections.nCopies(cols, 0.0);
                 temp_matrix.add(row);
             }
-            q = matrix_A.get(0).size();
+            this.q = matrix_A.get(0).size();
         }
 
         @Override
