@@ -14,7 +14,7 @@
 
 ## Introduction 👋
 
-Welcome to your Sixth Advanced Programming (AP) journey, where you'll delve into the fascinating world of multithreading in Java. This project is divided into two main sections:
+Welcome to your Fifth Advanced Programming (AP) journey, where you'll delve into the fascinating world of multithreading in Java. This project is divided into two main sections:
 
 1. **Theoretical Questions**: This section is designed to deepen your understanding of key multithreading concepts in Java. You'll explore topics such as the `Runnable` interface, the `Thread` class, the `interrupt()` method, and the `run()` method, and engage with thought-provoking questions that challenge your theoretical knowledge.
 
@@ -47,26 +47,25 @@ Please note that while this assignment covers many important aspects of multithr
 
 ### Theoretical Questions 📝 
 
-1. **What is the behavior of a sleeping thread in Java when its interruption flag is checked from within the thread itself?**
-    - *Hint*: Consider the role of the `InterruptedException` and the `Thread.interrupted()` method.
+1. **What will be printed after interrupting the thread?**
 ```java
-public class SleepThread extends Thread {
-    public void run() {
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            System.out.println("Thread was interrupted!");
+public static class SleepThread extends Thread {
+        public void run() {
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted!");
+            } finally {
+                System.out.println("Thread will be finished here!!!");
+            }
         }
     }
-}
 
-public class Main {
     public static void main(String[] args) {
         SleepThread thread = new SleepThread();
         thread.start();
         thread.interrupt();
     }
-}
 ```
 2. **In Java, what would be the outcome if the `run()` method of a `Runnable` object is invoked directly, without initiating it inside a `Thread` object?**
     - *Hint*: Think about the difference between calling a method directly and starting a new thread.
@@ -131,7 +130,7 @@ public class Main {
     3. Store the calculated elements from each thread in temporary matrices.
     4. Combine the temporary matrices to construct the final matrix **C**.
 
-- **Warning: ** You don't have to modify the codes blocks that are marked like the following: 
+- **Warning: ** You don't have to modify the code blocks that are marked like the following: 
 
 - ```
   /*
