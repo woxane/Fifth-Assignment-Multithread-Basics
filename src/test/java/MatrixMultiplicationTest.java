@@ -8,10 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MatrixMultiplicationTest {
-    static MatrixMultiplication obj = new MatrixMultiplication();
-    static List<List<Double>> matrix_A;
-    static List<List<Double>> matrix_B;
-    static List<List<Double>> matrix_C;
+    static List<List<Integer>> matrix_A;
+    static List<List<Integer>> matrix_B;
+    static List<List<Integer>> matrix_C;
 
     @BeforeClass
     public static void initialize() {
@@ -20,15 +19,15 @@ public class MatrixMultiplicationTest {
         matrix_C = readMatrixFromCSV("src/test/resources/matrix_C.csv"); // 100 X 100
     }
 
-    private static List<List<Double>> readMatrixFromCSV(String filename) {
-        List<List<Double>> matrix = new ArrayList<>();
+    private static List<List<Integer>> readMatrixFromCSV(String filename) {
+        List<List<Integer>> matrix = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                List<Double> row = new ArrayList<>();
+                List<Integer> row = new ArrayList<>();
                 for (String value : values) {
-                    row.add(Double.parseDouble(value));
+                    row.add(Integer.parseInt(value));
                 }
                 matrix.add(row);
             }
