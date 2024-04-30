@@ -41,6 +41,6 @@ public class MatrixMultiplicationTest {
     // The maximum time excepted to calculate the matrix multiplication is 500 milliseconds
     @Test(timeout = 500)
     public void testParallelizeMatMul() {
-        Assert.assertArrayEquals(matrix_C, obj.ParallelizeMatMul(matrix_1, matrix_2));
+        Assert.assertTrue(matrix_C.equals(MatrixMultiplication.ParallelizeMatMul(matrix_A, matrix_B)));
     }
 }
