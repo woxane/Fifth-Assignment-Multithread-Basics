@@ -1,53 +1,46 @@
-import org.ejml.simple.SimpleMatrix;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MatrixMultiplicationTest {
     static MatrixMultiplication obj = new MatrixMultiplication();
-    static double[][] matrix_1;
-    static double[][] matrix_2;
-    static double[][] final_mat;
+    static List<List<Double>> matrix_A;
+    static List<List<Double>> matrix_B;
+    static List<List<Double>> matrix_C;
 
     @BeforeClass
     public static void initialize() {
-        int row_size = 100;
-        int col_size = 100;
-        matrix_1 = new double[row_size][col_size];
-        matrix_2 = new double[col_size][row_size];
-        
-        for (int i = 0; i < row_size; i++) {
-            for (int j = 0; j < col_size; j++) {
-                matrix_1[i][j] = i + j;
-                matrix_2[i][j] = i - j;
-                // Initializing the matrices
-            }
-        }
-
-        // Convert Java arrays to EJML matrices
-        SimpleMatrix ejmlMatrix1 = new SimpleMatrix(matrix_1);
-        SimpleMatrix ejmlMatrix2 = new SimpleMatrix(matrix_2);
-
-        // Perform matrix multiplication
-        SimpleMatrix result = ejmlMatrix1.mult(ejmlMatrix2);
-
-        // Convert the result back to a Java array
-        final_mat = MatrixMultiplicationTest.matrix2Array(result);
+        matrix_A = readMatrixFromCSV("src/test/resources/matrix_A.csv"); // 100 X 200
+        matrix_B = readMatrixFromCSV("src/test/resources/matrix_B.csv"); // 200 X 100
+        matrix_C = readMatrixFromCSV("src/test/resources/matrix_C.csv"); // 100 X 100
     }
 
-    public static double[][] matrix2Array(SimpleMatrix matrix) {
-        double[][] array = new double[matrix.numRows()][matrix.numCols()];
-        for (int r = 0; r < matrix.numRows(); r++) {
-            for (int c = 0; c < matrix.numCols(); c++) {
-                array[r][c] = matrix.get(r, c);
+    private static List<List<Double>> readMatrixFromCSV(String filename) {
+        List<List<Double>> matrix = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                List<Double> row = new ArrayList<>();
+                for (String value : values) {
+                    row.add(Double.parseDouble(value));
+                }
+                matrix.add(row);
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return array;
+        return matrix;
     }
 
     // The maximum time excepted to calculate the matrix multiplication is 500 milliseconds
     @Test(timeout = 500)
     public void testParallelizeMatMul() {
-        Assert.assertArrayEquals(final_mat, obj.ParallelizeMatMul(matrix_1, matrix_2));
+        Assert.assertArrayEquals(matrix_C, obj.ParallelizeMatMul(matrix_1, matrix_2));
     }
 }

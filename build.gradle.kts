@@ -15,10 +15,6 @@ dependencies {
     // https://mvnrepository.com/artifact/junit/junit
 // https://mvnrepository.com/artifact/junit/junit
     testImplementation("junit:junit:4.13.2")
-    // https://mvnrepository.com/artifact/org.ejml/ejml-core
-    // https://mvnrepository.com/artifact/org.ejml/ejml-core
-    implementation("org.ejml:ejml-simple:0.41") // Replace with the desired version
-
 }
 
 tasks.test {
