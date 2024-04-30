@@ -109,27 +109,39 @@ public class Main {
 
 ### Practical Questions 💻
 
-1. **Task Scheduler**:
+**Task Scheduler**:
 
-   - In this problem, you are given an **ArrayList** of tasks, each with two fields: **taskName** and **processingTime**. The goal is to sort these tasks based on their priority, where tasks with longer processing times have higher priority. After sorting, we’ll create separate threads for each task and execute them. Importantly, we’ll wait for each thread to finish its work to ensure the desired execution order. Finally, we’ll return the order of task execution.
+- In this problem, you are given an **ArrayList** of tasks, each with two fields: **taskName** and **processingTime**. The goal is to sort these tasks based on their priority, where tasks with longer processing times have higher priority. After sorting, we’ll create separate threads for each task and execute them. Importantly, we’ll wait for each thread to finish its work to ensure the desired execution order. Finally, we’ll return the order of task execution.
 
-2. **Parallelizing Matrix Multiplication**:
+**Parallelizing Matrix Multiplication**:
 
-   - In this problem, you are asked to write a program that can parallelize matrix multiplication using multithreading.
+- In this problem, you are asked to write a program that can parallelize matrix multiplication using multithreading.
 
-   - In the **ParallelizeMatMul** method, you will be given two matrices, **A** and **B**. Matrix **A** has dimensions **p** × **q**, and matrix **B** has dimensions **q** × **r** (where both **p** and **r** are even numbers). Your task is to compute the dot product of matrices **A** and **B** to obtain a resulting matrix, **C**. To achieve faster execution, we’ll utilize multithreading.
+- In the **ParallelizeMatMul** method, you will be given two matrices, **A** and **B**. Matrix **A** has dimensions **p** × **q**, and matrix **B** has dimensions **q** × **r** (where both **p** and **r** are even numbers). Your task is to compute the dot product of matrices **A** and **B** to obtain a resulting matrix, **C**. To achieve faster execution, we’ll utilize multithreading.
 
-   - **Hint**:
+- **Hint**:
 
-     - Divide the final matrix **C** into four equal quarters, as shown in the figure below. Assign each quarter to a separate thread for calculations.
+  - Divide the final matrix **C** into four equal quarters, as shown in the figure below. Assign each quarter to a separate thread for calculations.
 
-     ![](./Images/OIG3.jpeg)
+  ![](./Images/OIG3.jpeg)
 
-     - Procedure:
-       1. Divide the quarters among four threads in the **ParallelizeMatMul** method.
-       2. Specify how each thread should calculate the elements in its assigned quarter within its **run()** method.
-       3. Store the calculated elements from each thread in temporary matrices.
-       4. Combine the temporary matrices to construct the final matrix **C**.
+  - Procedure:
+    1. Divide the quarters among four threads in the **ParallelizeMatMul** method.
+    2. Specify how each thread should calculate the elements in its assigned quarter within its **run()** method.
+    3. Store the calculated elements from each thread in temporary matrices.
+    4. Combine the temporary matrices to construct the final matrix **C**.
+
+- **Warning: ** You don't have to modify the codes blocks that are marked like the following: 
+
+- ```
+  /*
+      ------------------------- You don't need to modify this part of the code -------------------------
+   */
+   	Some codes ...
+   /*
+      ------------------------- You don't need to modify this part of the code -------------------------
+   */
+  ```
 
 ## Evaluation ⚖️
 
