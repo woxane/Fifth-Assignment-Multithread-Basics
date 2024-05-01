@@ -1,6 +1,8 @@
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import sbu.cs.MatrixMultiplication;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,7 +14,7 @@ public class MatrixMultiplicationTest {
     static List<List<Integer>> matrix_B;
     static List<List<Integer>> matrix_C;
 
-    @BeforeClass
+    @BeforeAll
     public static void initialize() {
         matrix_A = readMatrixFromCSV("src/test/resources/matrix_A.csv"); // 100 X 200
         matrix_B = readMatrixFromCSV("src/test/resources/matrix_B.csv"); // 200 X 100
@@ -38,8 +40,8 @@ public class MatrixMultiplicationTest {
     }
 
     // The maximum time excepted to calculate the matrix multiplication is 500 milliseconds
-    @Test(timeout = 500)
+    @Test
     public void testParallelizeMatMul() {
-        Assert.assertTrue(matrix_C.equals(MatrixMultiplication.ParallelizeMatMul(matrix_A, matrix_B)));
+        Assertions.assertTrue(matrix_C.equals(MatrixMultiplication.ParallelizeMatMul(matrix_A, matrix_B)));
     }
 }

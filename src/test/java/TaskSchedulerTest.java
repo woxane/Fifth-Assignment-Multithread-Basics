@@ -1,21 +1,36 @@
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
+import sbu.cs.TaskScheduler.Task;
+import sbu.cs.TaskScheduler;
 
 public class TaskSchedulerTest {
+
     @Test
     public void test1() {
-        ArrayList<TaskScheduler.Task> tasks = new ArrayList<>();
-        TaskScheduler.Task A = new TaskScheduler.Task("A", 100);
-        TaskScheduler.Task B = new TaskScheduler.Task("B", 150);
-        TaskScheduler.Task C = new TaskScheduler.Task("C", 200);
-        TaskScheduler.Task E = new TaskScheduler.Task("E", 130);
-        TaskScheduler.Task F = new TaskScheduler.Task("F", 300);
-        tasks.add(A);
-        tasks.add(B);
-        tasks.add(C);
-        tasks.add(E);
-        tasks.add(F);
-        Assert.assertArrayEquals(TaskScheduler.doTasks(tasks).toArray(), new String[]{"F", "C", "B", "E", "A"});
+        ArrayList<Task> tasks = new ArrayList<>();
+
+        tasks.add(new Task("A", 100));
+        tasks.add(new Task("B", 150));
+        tasks.add(new Task("C", 200));
+        tasks.add(new Task("E", 130));
+        tasks.add(new Task("F", 300));
+
+        Assertions.assertArrayEquals(TaskScheduler.doTasks(tasks).toArray(), new String[]{"F", "C", "B", "E", "A"});
+    }
+
+    @Test
+    public void test2() {
+        ArrayList<Task> tasks = new ArrayList<>();
+
+        tasks.add(new Task("A", 200));
+        tasks.add(new Task("B", 250));
+        tasks.add(new Task("C", 150));
+        tasks.add(new Task("E", 500));
+        tasks.add(new Task("F", 50));
+        tasks.add(new Task("G", 300));
+
+        Assertions.assertArrayEquals(TaskScheduler.doTasks(tasks).toArray(), new String[]{"F", "C", "A", "B", "G", "E"});
     }
 }
