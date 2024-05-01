@@ -15,7 +15,7 @@
 
 Welcome to your Fifth Advanced Programming (AP) journey, where you'll delve into the fascinating world of multithreading in Java. This project is divided into two main sections:
 
-1. **Theoretical Questions**: This section is designed to deepen your understanding of key multithreading concepts in Java. You'll explore topics such as the `Runnable` interface, the `Thread` class, the `interrupt()` method, and the `run()` method, and engage with thought-provoking questions that challenge your theoretical knowledge.
+1. **Theoretical Questions**: This section is designed to deepen your understanding of key multithreading concepts in Java. You'll have to analyze three code blocks and answer questions about them.
 
 2. **Practical Questions**: In this section, you'll get hands-on experience with multithreading in Java. You'll have the opportunity to write code that implements the theoretical concepts you've learned, providing you with practical understanding and experience.
 
@@ -27,15 +27,15 @@ By completing this assignment, you will:
 - Deepen your understanding of **multithreading** in Java and apply the concepts effectively.
 - Gain familiarity with key multithreading concepts such as the `Runnable` interface, the `Thread` class, the `interrupt()` method, and the `run()` method.
 
-Please note that while this assignment covers many important aspects of multithreading, there are some advanced topics such as race condition, synchronization, and others that won't be covered in this assignment and will be introduced in the following week. However, a solid understanding of the concepts covered in this assignment is crucial for grasping those advanced topics.
+Note that while this assignment covers many important aspects of multithreading, there are some advanced topics such as race condition, synchronization, and others that won't be covered in this assignment and will be introduced in the following week. However, a solid understanding of the concepts covered in this assignment is crucial for grasping those advanced topics.
 
 ## Tasks 📋
 
 ### Theoretical Questions 📝 
 
-1. **What will be printed after interrupting the thread?**
+**Note: Please answer these questions in a Markdown file and place it in the root directory of your fork. Include code or screenshots where you see fit.**
 
-**Note: For this assignment, you don’t need to create a report file. Instead, you should create a Markdown file and answer your theoretical questions there.**
+1. **What will be printed after interrupting the thread?**
 
 ```java
 public static class SleepThread extends Thread {
@@ -71,7 +71,7 @@ public class Main {
     }
 }
 ```
-3. Elaborate on the sequence of events that occur when the `join()` method of a thread (let's call it `Thread_0`) is invoked within the `Main()` method of a Java program?
+3. Elaborate on the sequence of events that occur when the `join()` method of a thread (let's call it `Thread_0`) is invoked within the `Main()` method of a Java program.
 ```java
 public class JoinThread extends Thread {
     public void run() {
@@ -103,7 +103,7 @@ public class Main {
 
 - In this problem, you are asked to write a program that can parallelize matrix multiplication using multithreading.
 
-- In the **ParallelizeMatMul** method, you will be given two matrices, **A** and **B**. Matrix **A** has dimensions **p** × **q**, and matrix **B** has dimensions **q** × **r** (where both **p** and **r** are even numbers). Your task is to compute the dot product of matrices **A** and **B** to obtain a resulting matrix, **C**. To achieve faster execution, we’ll utilize multithreading.
+- In the **ParallelizeMatMul** method, you will be given two matrices, **A** and **B**. Matrix **A** has dimensions **p** × **q**, and matrix **B** has dimensions **q** × **r** (where both **p** and **r** are even numbers). Your task is to compute the product of matrices **A** and **B** to obtain a resulting matrix, **C**. To achieve faster execution, we’ll utilize multithreading.
 
 - **Hint**:
   - Divide the final matrix **C** into four equal quarters, as shown in the figure below. Assign each quarter to a separate thread for calculations.
@@ -116,17 +116,6 @@ public class Main {
     3. Store the calculated elements from each thread in temporary matrices.
     4. Combine the temporary matrices to construct the final matrix **C**.
 
-- **Warning:** You don't have to modify the code blocks that are marked like the following:
-
-- ```
-  /*
-      ------------------------- You don't need to modify this part of the code -------------------------
-   */
-   	Some codes ...
-   /*
-      ------------------------- You don't need to modify this part of the code -------------------------
-   */
-  ```
 
 ## Evaluation ⚖️
 
@@ -143,7 +132,7 @@ Your work on this assignment will be evaluated based on:
 1. Add your mentor as a contributor to the project.
 2. Create a `develop` branch for implementing features.
 3. Use Git for regular code commits.
-4. Push your code to the remote repository.
+4. Push your code and the answers file to the remote repository.
 5. Submit a pull request to merge the `develop` branch with `main`.
 
 The deadline for submitting your code is **Wednesday, May 8** (19th of Ordibehesht)
