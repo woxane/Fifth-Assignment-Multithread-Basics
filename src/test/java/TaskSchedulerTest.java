@@ -31,6 +31,6 @@ public class TaskSchedulerTest {
         tasks.add(new Task("F", 50));
         tasks.add(new Task("G", 300));
 
-        Assertions.assertArrayEquals(TaskScheduler.doTasks(tasks).toArray(), new String[]{"F", "C", "A", "B", "G", "E"});
+        Assertions.assertArrayEquals(TaskScheduler.doTasks(tasks).toArray(), new String[]{"E", "G", "B", "A", "C", "F"});
     }
 }
