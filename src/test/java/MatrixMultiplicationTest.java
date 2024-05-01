@@ -39,9 +39,8 @@ public class MatrixMultiplicationTest {
         return matrix;
     }
 
-    // The maximum time excepted to calculate the matrix multiplication is 500 milliseconds
     @Test
     public void testParallelizeMatMul() {
-        Assertions.assertTrue(matrix_C.equals(MatrixMultiplication.ParallelizeMatMul(matrix_A, matrix_B)));
+        Assertions.assertEquals(matrix_C, MatrixMultiplication.ParallelizeMatMul(matrix_A, matrix_B));
     }
 }
