@@ -1,7 +1,12 @@
-import java.util.ArrayList;
+package sbu.cs;
 
-public class TaskScheduler {
-    public static class Task implements Runnable{
+import java.util.ArrayList;
+import java.util.List;
+
+public class TaskScheduler
+{
+    public static class Task implements Runnable
+    {
         /*
             ------------------------- You don't need to modify this part of the code -------------------------
          */
@@ -19,33 +24,28 @@ public class TaskScheduler {
         @Override
         public void run() {
             /*
-                Simulate utilizing CPU by sleeping the thread
-                TODO
+            TODO
+                Simulate utilizing CPU by sleeping the thread for the specified processingTime
              */
         }
     }
 
-    public static ArrayList<String> doTasks(ArrayList<Task> tasks) {
-        /*
-            ------------------------- You don't need to modify this part of the code -------------------------
-         */
+    public static ArrayList<String> doTasks(ArrayList<Task> tasks)
+    {
         ArrayList<String> finishedTasks = new ArrayList<>();
-        /*
-            ------------------------- You don't need to modify this part of the code -------------------------
-         */
 
         /*
-            Create a thread for each given task, And then start them based on which task has the highest priority (highest priority belongs to the tasks that take more time to be completed).
-            You have to wait for each task to get done and then go for the next tasks.
+        TODO
+            Create a thread for each given task, And then start them based on which task has the highest priority
+            (highest priority belongs to the tasks that take more time to be completed).
+            You have to wait for each task to get done and then start the next task.
             Don't forget to add each task's name to the finishedTasks after it's completely finished.
-            TODO
          */
+
         return finishedTasks;
     }
 
     public static void main(String[] args) {
-        /*
-            Test your code here
-         */
+        // Test your code here
     }
 }
