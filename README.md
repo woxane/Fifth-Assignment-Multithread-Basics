@@ -17,7 +17,7 @@ Welcome to your Fifth Advanced Programming (AP) journey, where you'll delve into
 
 1. **Theoretical Questions**: This section is designed to deepen your understanding of key multithreading concepts in Java. You'll have to analyze three code blocks and answer questions about them.
 
-2. **Practical Questions**: In this section, you'll get hands-on experience with multithreading in Java. You'll have the opportunity to write code that implements the theoretical concepts you've learned, providing you with practical understanding and experience.
+2. **Practical Questions**: In this section, you'll get hands-on experience with multithreading in Java. Test cases are provided for each problem, but your code will still be manually checked to ensure you've implemented 
 
 
 ## Objectives 🎯
@@ -27,7 +27,7 @@ By completing this assignment, you will:
 - Deepen your understanding of **multithreading** in Java and apply the concepts effectively.
 - Gain familiarity with key multithreading concepts such as the `Runnable` interface, the `Thread` class, the `interrupt()` method, and the `run()` method.
 
-Note that while this assignment covers many important aspects of multithreading, there are some advanced topics such as race condition, synchronization, and others that won't be covered in this assignment and will be introduced in the following week. However, a solid understanding of the concepts covered in this assignment is crucial for grasping those advanced topics.
+Note that while this assignment covers many important aspects of multithreading, there are some advanced topics such as race condition and synchronization that won't be covered in this assignment and will be introduced in the following week. However, a solid understanding of the concepts covered in this assignment is crucial for grasping those advanced topics.
 
 ## Tasks 📋
 
@@ -121,9 +121,9 @@ public class Main {
 
 Your work on this assignment will be evaluated based on:
 
-- **Understanding of Multithreading Concepts**: Your ability to accurately answer the theoretical questions, demonstrating a deep understanding of multithreading in Java. Please note that the answers to the theoretical questions should be provided separately in a markdown file.
+- **Understanding of Multithreading Concepts**: Your ability to accurately answer the theoretical questions, demonstrating a deep understanding of multithreading in Java. Remember that the answers to the theoretical questions should be provided separately in a markdown file.
 
-- **Practical Implementation**: Your ability to correctly implement multithreading concepts in Java in the practical questions. This includes creating and managing threads, using the `Runnable` interface and the `Thread` class, handling thread interruptions, and invoking the `run()` method.
+- **Test Cases**: Your code should pass all the tests provided in the test directory. Make sure to enable GitHub Actions to run the tests on GitHub.
 
 - **Code Quality**: Your code should be well-structured, readable, and efficient. Proper use of Java conventions, including variable naming, class structure, and comments, will also be considered.
 
