@@ -1,6 +1,7 @@
 package sbu.cs;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TaskScheduler
@@ -33,15 +34,20 @@ public class TaskScheduler
     public static ArrayList<String> doTasks(ArrayList<Task> tasks)
     {
         ArrayList<String> finishedTasks = new ArrayList<>();
+        Collections.sort(tasks , (a , b) -> Integer.compare(a.processingTime , b.processingTime));
 
-        /*
-        TODO
-            Create a thread for each given task, And then start them based on which task has the highest priority
-            (highest priority belongs to the tasks that take more time to be completed).
-            You have to wait for each task to get done and then start the next task.
-            Don't forget to add each task's name to the finishedTasks after it's completely finished.
-         */
+        for (Task task : tasks) {
+            Thread thread = new Thread(task);
+            thread.start();
 
+            try {
+                thread.join();
+            } catch (InterruptedException err) {
+                throw new RuntimeException(err);
+            }
+            finishedTasks.add(task.taskName);
+
+        }
         return finishedTasks;
     }
 
